@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Operations</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!-- Label and input for the first number -->
+        <label for="numberInput1">Enter the first Number:</label>
+        <input type="number" id="numberInput1" name="numberInput" min="0">
+
+        <!-- Label and input for the second number -->
+        <label for="numberInput2">Enter the second Number:</label>
+        <input type="number" id="numberInput2" name="numberInput" min="0">
+
+        <!-- Buttons for different operations -->
+        <input type="button" value="Multiplication" onclick="showProduct()">
+        <input type="button" value="Addition" onclick="showSum()">
+        <input type="button" value="Division" onclick="showDiv()">
+        <input type="button" value="Subtraction" onclick="showDiff()">
+
+    </form>
+
+    <!-- Placeholder for displaying the result -->
+    <p id="result"></p>
+
+    <script>
+        // Function to calculate the product and display it
+        function showProduct() {
+            // Get the input elements
+            var inputElement1 = document.getElementById('numberInput1');
+            var inputElement2 = document.getElementById('numberInput2');
+
+            // Get the values entered by the user
+            var inputValue1 = parseFloat(inputElement1.value); // Convert to a number
+            var inputValue2 = parseFloat(inputElement2.value); // Convert to a number
+
+            // Check if both inputs are valid numbers
+            if (!isNaN(inputValue1) && !isNaN(inputValue2)) {
+                // Calculate the product
+                var product = inputValue1 * inputValue2;
+
+                // Display the product in the HTML
+                document.getElementById('result').textContent = 'Result: ' + product;
+            } else {
+                // If inputs are not valid numbers, show an error message
+                document.getElementById('result').textContent = 'Invalid input. Please enter valid numbers.';
+            }
+        }
+
+        function showSum() {
+            // Get the input elements
+            var inputElement1 = document.getElementById('numberInput1');
+            var inputElement2 = document.getElementById('numberInput2');
+
+            // Get the values entered by the user
+            var inputValue1 = parseFloat(inputElement1.value); // Convert to a number
+            var inputValue2 = parseFloat(inputElement2.value); // Convert to a number
+
+            // Check if both inputs are valid numbers
+            if (!isNaN(inputValue1) && !isNaN(inputValue2)) {
+                // Calculate the product
+                var sum = inputValue1 + inputValue2;
+
+                // Display the product in the HTML
+                document.getElementById('result').textContent = 'Sum: ' + sum;
+            } else {
+                // If inputs are not valid numbers, show an error message
+                document.getElementById('result').textContent = 'Invalid input. Please enter valid numbers.';
+            }
+        }
+
+        function showDiff() {
+            // Get the input elements
+            var inputElement1 = document.getElementById('numberInput1');
+            var inputElement2 = document.getElementById('numberInput2');
+
+            // Get the values entered by the user
+            var inputValue1 = parseFloat(inputElement1.value); // Convert to a number
+            var inputValue2 = parseFloat(inputElement2.value); // Convert to a number
+
+            // Check if both inputs are valid numbers
+            if (!isNaN(inputValue1) && !isNaN(inputValue2)) {
+                // Calculate the product
+                var diff = inputValue1 - inputValue2;
+
+                // Display the product in the HTML
+                document.getElementById('result').textContent = 'Difference: ' + diff;
+            } else {
+                // If inputs are not valid numbers, show an error message
+                document.getElementById('result').textContent = 'Invalid input. Please enter valid numbers.';
+            }
+        }
+
+        function showDiv() {
+            // Get the input elements
+            var inputElement1 = document.getElementById('numberInput1');
+            var inputElement2 = document.getElementById('numberInput2');
+
+            // Get the values entered by the user
+            var inputValue1 = parseFloat(inputElement1.value); // Convert to a number
+            var inputValue2 = parseFloat(inputElement2.value); // Convert to a number
+
+            // Check if both inputs are valid numbers
+            if (!isNaN(inputValue1) && !isNaN(inputValue2)) {
+                // Calculate the product
+                var div = inputValue1 / inputValue2;
+
+                // Display the product in the HTML
+                document.getElementById('result').textContent = 'Division: ' + div;
+            } else {
+                // If inputs are not valid numbers, show an error message
+                document.getElementById('result').textContent = 'Invalid input. Please enter valid numbers.';
+            }
+        }
+    </script>
+</body>
+</html>
